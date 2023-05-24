@@ -35,11 +35,9 @@ const Styledtabla = styled.div`
 
 const StyledCell = styled.td`
 
-    vertical-align:middle;
     text-align:center;
     font-weight:300;
     & span{
-        font-weight:100;
         cursor:pointer;
     }
 

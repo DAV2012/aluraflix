@@ -1,13 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Inicio from './routes/inico';
+import LogingView from './routes/logingView';
+import Error404 from './routes/error-404';
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Inicio />} />
+        <Route path='/loging' element={<LogingView />} />
+        <Route path='*' element={<Error404 />} />
+
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './componentes/header';
+import Footer from './componentes/footer';
+import { DataProvider } from './contexts/FirebaseProvider';
+import Main from './componentes/main/main';
 
-function App() {
+
+function App({uidUser}) {
+  
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <DataProvider uidUser={uidUser}>
+        <Header />
+        <Main>
+        </Main>
+      </DataProvider>
+      <Footer />
+    </>
   );
 }
 
